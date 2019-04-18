@@ -22,7 +22,7 @@
     }
 
     #InputSearchBar {
-        max-width: 900px;
+        max-width: 600px;
         min-width: 300px;
         position: relative;
         left: 50%;
