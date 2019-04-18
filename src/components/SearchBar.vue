@@ -1,7 +1,9 @@
 <template>
-    <div :style="{width: '200' ,margin: '10% 0'}">
-        <div :style="{padding: '0 10%' ,margin: '10% 0'}"><img alt="Vue logo" src="../assets/logo.png"></div>
-        <Input search enter-button v-bind:placeholder="msg"/>
+    <div id="SearchBar">
+        <div>
+            <img alt="Search logo" src="../assets/logo.png" id="SearchLogo">
+        </div>
+        <Input search enter-button size="large" v-bind:placeholder="msg" id="InputSearchBar"/>
     </div>
 </template>
 <script>
@@ -13,3 +15,26 @@
     }
 </script>
 
+<style>
+    #SearchBar {
+        padding: 5% 10%;
+        text-align: center;
+    }
+
+    #InputSearchBar {
+        max-width: 900px;
+        min-width: 300px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #SearchLogo {
+        padding: 100px 10%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
