@@ -1,9 +1,9 @@
 <template>
-    <div id="SearchBar">
+    <div class="SearchBar">
         <div>
-            <img alt="Search logo" src="../assets/logo.png" id="SearchLogo">
+            <img alt="Search logo" src="../assets/logo.png" class="SearchLogo">
         </div>
-        <Input search enter-button size="large" v-bind:placeholder="msg" id="InputSearchBar"/>
+        <Input search enter-button size="large" v-bind:placeholder="msg" class="InputSearchBar"/>
     </div>
 </template>
 <script>
@@ -16,12 +16,12 @@
 </script>
 
 <style>
-    #SearchBar {
+    .SearchBar {
         padding: 5% 10%;
         text-align: center;
     }
 
-    #InputSearchBar {
+    .InputSearchBar {
         max-width: 600px;
         min-width: 300px;
         position: relative;
@@ -32,7 +32,7 @@
         transform: translate(-50%, -50%);
     }
 
-    #SearchLogo {
+    .SearchLogo {
         padding: 100px 10%;
         max-width: 100%;
         max-height: 100%;
