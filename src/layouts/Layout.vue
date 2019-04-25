@@ -46,11 +46,11 @@
         <Layout>
 
             <Content>
-<!--                <Breadcrumb class="breadcrumb">-->
-<!--                    <BreadcrumbItem>Home</BreadcrumbItem>-->
-<!--                    <BreadcrumbItem>Components</BreadcrumbItem>-->
-<!--                    <BreadcrumbItem>Layout</BreadcrumbItem>-->
-<!--                </Breadcrumb>-->
+                <!--                <Breadcrumb class="breadcrumb">-->
+                <!--                    <BreadcrumbItem>Home</BreadcrumbItem>-->
+                <!--                    <BreadcrumbItem>Components</BreadcrumbItem>-->
+                <!--                    <BreadcrumbItem>Layout</BreadcrumbItem>-->
+                <!--                </Breadcrumb>-->
                 <Card>
                     <Header class="header">
                         <Menu mode="horizontal" theme="light" active-name="1">
@@ -76,7 +76,7 @@
                         </Menu>
                     </Header>
                     <div class="content">
-                        <SearchBar msg="请输入关键词啦..."></SearchBar>
+                        <SearchBar v-bind:msg="info"></SearchBar>
                     </div>
                 </Card>
             </Content>
@@ -86,11 +86,37 @@
 </template>
 <script>
     import SearchBar from "../components/SearchBar.vue"
+    import axios from 'axios'
+    import console from 'console'
 
     export default {
-        name: 'app',
+        name: 'SearchHome',
         components: {
             SearchBar
+        },
+        data() {
+            return {
+                info: null,
+                loading: true,
+                errored: false
+            }
+        },
+        filters: {
+            currencydecimal(value) {
+                return value.toFixed(2)
+            }
+        },
+        mounted() {
+            axios
+                .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                .then(response => {
+                    this.info = response.data.bpi
+                })
+                .catch(error => {
+                    console.log(error)
+                    this.errored = true
+                })
+                .finally(() => this.loading = false)
         }
     }
 </script>
