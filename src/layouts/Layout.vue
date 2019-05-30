@@ -110,7 +110,7 @@
             axios
                 .get('https://api.coindesk.com/v1/bpi/currentprice.json')
                 .then(response => {
-                    this.info = response.data.bpi
+                    this.info = response.data.chartName
                 })
                 .catch(error => {
                     console.log(error)
