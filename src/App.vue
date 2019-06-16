@@ -1,17 +1,20 @@
 <template>
     <div>
         {{info}}
-        <Layout msg="Welcome to Your Vue.js App"/>
+        <layout msg="Welcome to Your Vue.js App"/>
+<!--        <layout-detail msg="Welcome to Your Vue.js App"/>-->
     </div>
 </template>
 
 <script>
-    import Layout from './layouts/Layout.vue'
+    import Layout from './layouts/Layout'
+    // import LayoutDetail from './layouts/LayoutDetail'
 
     export default {
         name: 'app',
         components: {
-            Layout
+            Layout,
+            // LayoutDetail
         },
     }
 </script>

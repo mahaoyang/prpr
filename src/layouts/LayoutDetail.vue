@@ -8,23 +8,28 @@
     }
 
     .layout-footer-center {
+        padding: 100px 50px;
         text-align: center;
         background: rgba(251, 255, 255, 0);
+        max-width: 1080px;
+        min-width: 300px;
     }
 
     .header {
+        padding: 30px 50px;
         background: rgba(255, 255, 255, 0);
     }
 
     .content {
-        min-height: 600px;
-        height: 750px;
-        /*background: rgb(255, 255, 255);*/
+        padding: 0 100px;
+        max-width: 1080px;
+        min-width: 300px;
     }
 
     .breadcrumb {
         text-align: right;
     }
+
 </style>
 <template>
     <Layout class="layout">
@@ -34,21 +39,9 @@
                     <Icon type="ios-home-outline"></Icon>
                     Home
                 </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Dropdown style="margin-left: 20px">
-                        <Button size="small" type="primary">
-                            <Icon type="logo-buffer"></Icon>
-                            更多功能
-                            <Icon type="ios-arrow-down"></Icon>
-                        </Button>
-                        <DropdownMenu slot="list">
-                            <DropdownItem>驴打滚</DropdownItem>
-                            <DropdownItem>炸酱面</DropdownItem>
-                            <DropdownItem disabled>豆汁儿(正在开发)</DropdownItem>
-                            <DropdownItem>冰糖葫芦</DropdownItem>
-                            <DropdownItem divided>北京烤鸭</DropdownItem>
-                        </DropdownMenu>
-                    </Dropdown>
+                <BreadcrumbItem to="/components/breadcrumb">
+                    <Icon type="logo-buffer"></Icon>
+                    Components
                 </BreadcrumbItem>
                 <BreadcrumbItem>
                     <Button size="small" type="primary">login</Button>
@@ -56,20 +49,22 @@
             </Breadcrumb>
         </Header>
         <Content class="content">
-            <SearchBar v-bind:msg="info"></SearchBar>
+            <search-detail></search-detail>
         </Content>
         <Footer class="layout-footer-center">2011-2019 &copy; Maagle Search</Footer>
     </Layout>
 </template>
 <script>
-    import SearchBar from "../components/SearchBar"
+    import SearchBarDetail from "../components/SearchBarDetail"
+    import SearchDetail from "../components/SearchDetail"
     import axios from 'axios'
     import console from 'console'
 
     export default {
         name: 'SearchHome',
         components: {
-            SearchBar
+            SearchBarDetail,
+            SearchDetail
         },
         data() {
             return {
