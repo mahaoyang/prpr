@@ -8,13 +8,13 @@
 
 <script>
     import Layout from './layouts/Layout'
-    // import LayoutDetail from './layouts/LayoutDetail'
+    import LayoutDetail from './layouts/LayoutDetail'
 
     export default {
         name: 'app',
         components: {
             Layout,
-            // LayoutDetail
+            LayoutDetail
         },
     }
 </script>
