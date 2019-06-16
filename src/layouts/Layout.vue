@@ -1,88 +1,53 @@
 <style scoped>
     .layout {
-        border: 1px solid #d7dde4;
-        background: #f5f7f9;
+        border: 1px solid rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0);
         position: relative;
         border-radius: 4px;
         overflow: hidden;
     }
 
-    .layout-logo {
-        width: 100px;
-        height: 30px;
-        background: #f5f7f9;
-        border-radius: 3px;
-        float: left;
-        position: relative;
-        top: 15px;
-        left: 20px;
-    }
-
-    .layout-nav {
-        width: 420px;
-        margin: -20px auto;
-        margin-right: 20px;
-    }
-
     .layout-footer-center {
         text-align: center;
+        background: rgba(251, 255, 255, 0);
     }
 
     .header {
-        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0);
     }
 
     .content {
         min-height: 600px;
-        height: 900px;
+        height: 750px;
+        /*background: rgb(255, 255, 255);*/
     }
 
     .breadcrumb {
-        margin: 20px 20px;
+        text-align: right;
     }
 </style>
 <template>
-    <div class="layout">
-        <Layout>
-
-            <Content>
-                <!--                <Breadcrumb class="breadcrumb">-->
-                <!--                    <BreadcrumbItem>Home</BreadcrumbItem>-->
-                <!--                    <BreadcrumbItem>Components</BreadcrumbItem>-->
-                <!--                    <BreadcrumbItem>Layout</BreadcrumbItem>-->
-                <!--                </Breadcrumb>-->
-                <Card>
-                    <Header class="header">
-                        <Menu mode="horizontal" theme="light" active-name="1">
-                            <div class="layout-logo"></div>
-                            <div class="layout-nav">
-                                <MenuItem name="1">
-                                    <Icon type="ios-navigate"></Icon>
-                                    Item 1
-                                </MenuItem>
-                                <MenuItem name="2">
-                                    <Icon type="ios-keypad"></Icon>
-                                    Item 2
-                                </MenuItem>
-                                <MenuItem name="3">
-                                    <Icon type="ios-analytics"></Icon>
-                                    Item 3
-                                </MenuItem>
-                                <MenuItem name="4">
-                                    <Icon type="ios-paper"></Icon>
-                                    Item 4
-                                </MenuItem>
-                            </div>
-                        </Menu>
-                    </Header>
-                    <div class="content">
-                        <SearchBar v-bind:msg="info"></SearchBar>
-                    </div>
-                </Card>
-            </Content>
-            <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
-        </Layout>
-    </div>
+    <Layout class="layout">
+        <Header class="header">
+            <Breadcrumb class="breadcrumb">
+                <BreadcrumbItem to="/">
+                    <Icon type="ios-home-outline"></Icon>
+                    Home
+                </BreadcrumbItem>
+                <BreadcrumbItem to="/components/breadcrumb">
+                    <Icon type="logo-buffer"></Icon>
+                    Components
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <Button size="small" type="primary">login</Button>
+                </BreadcrumbItem>
+            </Breadcrumb>
+        </Header>
+        <Content class="content">
+            <SearchBar v-bind:msg="info"></SearchBar>
+        </Content>
+        <Footer class="layout-footer-center">2011-2019 &copy; Maagle Search</Footer>
+    </Layout>
 </template>
 <script>
     import SearchBar from "../components/SearchBar.vue"

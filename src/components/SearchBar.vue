@@ -33,7 +33,7 @@
     }
 
     .SearchLogo {
-        padding: 100px 10%;
+        padding: 50px 10%;
         max-width: 100%;
         max-height: 100%;
     }
